@@ -13,6 +13,8 @@
 		B7791EF11BDA449B000DEE62 /* MyWeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7791EEF1BDA449B000DEE62 /* MyWeatherApp.xcdatamodeld */; };
 		B7791EF31BDA449B000DEE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7791EF21BDA449B000DEE62 /* Assets.xcassets */; };
 		B7791EF61BDA449B000DEE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7791EF41BDA449B000DEE62 /* LaunchScreen.storyboard */; };
+		B7791F001BDA45BB000DEE62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7791EFF1BDA45BB000DEE62 /* Constants.swift */; };
+		B7791F021BDA481B000DEE62 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7791F011BDA481B000DEE62 /* DownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B7791EF21BDA449B000DEE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7791EF51BDA449B000DEE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7791EF71BDA449B000DEE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7791EFF1BDA45BB000DEE62 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B7791F011BDA481B000DEE62 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		B7791EE71BDA449A000DEE62 /* MyWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				B7791EE81BDA449A000DEE62 /* AppDelegate.swift */,
+				B7791F031BDA4822000DEE62 /* Model */,
+				B7791EFE1BDA459C000DEE62 /* Util */,
 				B7791EEA1BDA449A000DEE62 /* ViewController.swift */,
 				B7791EEC1BDA449A000DEE62 /* Main.storyboard */,
+				B7791EFD1BDA44B6000DEE62 /* Configuration */,
+			);
+			path = MyWeatherApp;
+			sourceTree = "<group>";
+		};
+		B7791EFD1BDA44B6000DEE62 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B7791EE81BDA449A000DEE62 /* AppDelegate.swift */,
 				B7791EF21BDA449B000DEE62 /* Assets.xcassets */,
 				B7791EF41BDA449B000DEE62 /* LaunchScreen.storyboard */,
 				B7791EF71BDA449B000DEE62 /* Info.plist */,
 				B7791EEF1BDA449B000DEE62 /* MyWeatherApp.xcdatamodeld */,
 			);
-			path = MyWeatherApp;
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		B7791EFE1BDA459C000DEE62 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B7791EFF1BDA45BB000DEE62 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		B7791F031BDA4822000DEE62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7791F011BDA481B000DEE62 /* DownloadManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,12 +123,14 @@
 		B7791EDD1BDA449A000DEE62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MWA;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = com.kostov;
 				TargetAttributes = {
 					B7791EE41BDA449A000DEE62 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 47KQE9A93N;
 					};
 				};
 			};
@@ -139,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7791EEB1BDA449A000DEE62 /* ViewController.swift in Sources */,
+				B7791F021BDA481B000DEE62 /* DownloadManager.swift in Sources */,
 				B7791EF11BDA449B000DEE62 /* MyWeatherApp.xcdatamodeld in Sources */,
 				B7791EE91BDA449A000DEE62 /* AppDelegate.swift in Sources */,
+				B7791F001BDA45BB000DEE62 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kostov.MyWeatherApp;
@@ -264,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kostov.MyWeatherApp;
