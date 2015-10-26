@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController: UIPageViewController!
+    var FORECAST_5DAYS = 5
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         let downloadData = APICall()
         
@@ -35,14 +37,32 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         downloadData.downloadDataForCity("") { responseDict, error -> Void in
             if let err = error {
                 print("<--" + err.debugDescription + "-->");
+                return
             }
+ 
             if let dictonary = responseDict {
-                print(dictonary)
+              //  print(dictonary)
+                
+                
+//                let date = NSDate()
+//                let calendar = NSCalendar.currentCalendar()
+//                let components = calendar.components(NSCalendarUnit.Weekday, fromDate: date)
+//                print(components.weekday)
+                
+                
+                if let list = dictonary["list"] as? [Dictionary<String,AnyObject>] {
+                  
+                        var day = DayWeather(dayInfo: list[0]);
+                    
+                
+                }
             }
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
         let pageVC = viewController as? MWAPageContentViewController
         var index = pageVC?.pageIndex
         
@@ -76,17 +96,20 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         return nil
     }
     
-    func viewControllerAtIndex(index:NSInteger) -> MWAPageContentViewController? {
+    func viewControllerAtIndex(index:NSInteger) -> MWAPageContentViewController?
+    {
         let pageVC = storyboard?.instantiateViewControllerWithIdentifier("MWAPageContentViewController") as? MWAPageContentViewController
         pageVC?.pageIndex = index
         return pageVC
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
         return 1
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
         return 0
     }
 }

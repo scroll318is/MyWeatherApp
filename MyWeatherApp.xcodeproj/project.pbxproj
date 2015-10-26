@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B736CD9E1BDE4F730085B895 /* MWAPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B736CD9D1BDE4F730085B895 /* MWAPageContentViewController.swift */; };
+		B736CDA21BDE72F80085B895 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B736CDA11BDE72F80085B895 /* DayWeather.swift */; };
 		B7791EE91BDA449A000DEE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7791EE81BDA449A000DEE62 /* AppDelegate.swift */; };
 		B7791EEB1BDA449A000DEE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7791EEA1BDA449A000DEE62 /* ViewController.swift */; };
 		B7791EEE1BDA449A000DEE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7791EEC1BDA449A000DEE62 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		B736CD9D1BDE4F730085B895 /* MWAPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWAPageContentViewController.swift; sourceTree = "<group>"; };
+		B736CDA11BDE72F80085B895 /* DayWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
 		B7791EE51BDA449A000DEE62 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7791EE81BDA449A000DEE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7791EEA1BDA449A000DEE62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B7791F011BDA481B000DEE62 /* APICall.swift */,
+				B736CDA11BDE72F80085B895 /* DayWeather.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				B7791EF11BDA449B000DEE62 /* MyWeatherApp.xcdatamodeld in Sources */,
 				B7791EE91BDA449A000DEE62 /* AppDelegate.swift in Sources */,
 				B7791F001BDA45BB000DEE62 /* Constants.swift in Sources */,
+				B736CDA21BDE72F80085B895 /* DayWeather.swift in Sources */,
 				B736CD9E1BDE4F730085B895 /* MWAPageContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

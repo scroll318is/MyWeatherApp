@@ -9,14 +9,14 @@
 import Foundation
 
 class APICall{
-    var urlString = URL_FORECAST + API_KEY
+    var urlString = URL_16DAY_FORECAST + API_KEY
 //    static let sharedInstance = DownloadManager()
     
     func downloadDataForCity(city: String, completion: DownloadComplete) {
         let session = NSURLSession.sharedSession()
         session.configuration.timeoutIntervalForRequest = 30.0
         session.configuration.timeoutIntervalForResource = 60.0
-        
+        print("URL: " + urlString)
         
         let url = NSURL(string: urlString)!
         session.dataTaskWithURL(url) { (data: NSData?, response:NSURLResponse?, error: NSError?) -> Void in
