@@ -9,14 +9,39 @@
 import Foundation
 
 class DayWeather {
-    private var _timestamp = ""
+    private var _timestamp: NSTimeInterval?
     private var _max_temp = ""
     private var _min_temp = ""
     private var _wind_speed = ""
     private var _humidity = ""
     
-    var timestamp: String {
-        return _timestamp
+    let KELVIN = 273.15
+    
+    static func getDataSourceObjects(arr:[Dictionary<String,AnyObject>], forHowManyDays: NSInteger) -> [DayWeather] {
+        var days = [DayWeather]()
+        
+        if arr.count > 0 && arr.count >= forHowManyDays {
+        
+            for var i = 0 ; i < forHowManyDays ; i++ {
+                let dict = arr[i]
+                let day = DayWeather(dayInfo: dict)
+                days.append(day)
+            }
+            
+        }
+        
+//        print(days)
+        return days
+    }
+    
+    var dayOfWeek: String {
+        if _timestamp != nil {
+            let date = NSDate(timeIntervalSince1970: _timestamp!)
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(NSCalendarUnit.Weekday, fromDate: date)
+            return weekDay(components.weekday)
+        }
+        return ""
     }
     
     var max_temp: String {
@@ -35,29 +60,31 @@ class DayWeather {
         return _humidity
     }
     
-    init(dayInfo:Dictionary<String,AnyObject>) {
+    private init(dayInfo:Dictionary<String,AnyObject>) {
         
-        if let dt = dayInfo["dt"] as? Int {
-            _timestamp = "\(dt)"
+        if let dt = dayInfo["dt"] as? NSTimeInterval {
+            _timestamp = dt
         }
         
         if let temp = dayInfo["temp"] as? Dictionary<String,AnyObject> {
             
-            if let min = temp["min"] as? String {
-                _min_temp = min
+            if let min = temp["min"] as? Double {
+                
+                _min_temp = "\(roundDouble(min - KELVIN))"
+                
             }
-            if let max = temp["max"] as? String {
-                _max_temp = max
+            if let max = temp["max"] as? Double {
+                _max_temp = "\(roundDouble(max - KELVIN))"
             }
             
         }
         
-        if let humidity = dayInfo["humidity"] as? String {
-            _humidity = humidity
+        if let humidity = dayInfo["humidity"] as? Double {
+            _humidity = "\(roundDouble(humidity))"
         }
         
-        if let wind = dayInfo["speed"] as? String {
-            _wind_speed = wind
+        if let wind = dayInfo["speed"] as? Double {
+            _wind_speed = "\(roundDouble(wind))"
         }
         
         print(_humidity)
@@ -65,6 +92,13 @@ class DayWeather {
         print(_max_temp)
         print(_min_temp)
         print(_timestamp)
+        print(dayOfWeek)
+    }
+    
+    func roundDouble(doToRound: Double) -> Double {
+        let toSecondDigit = 100.0
+        let y = Double(round(toSecondDigit * doToRound)/toSecondDigit)
+        return y
     }
     
     func weekDay(dayNumber: NSInteger) -> String

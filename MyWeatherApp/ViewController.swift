@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController: UIPageViewController!
     var FORECAST_5DAYS = 5
+    var dataSource = [DayWeather]()
     
     override func viewDidLoad()
     {
@@ -41,25 +42,21 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             }
  
             if let dictonary = responseDict {
-              //  print(dictonary)
-                
-                
-//                let date = NSDate()
-//                let calendar = NSCalendar.currentCalendar()
-//                let components = calendar.components(NSCalendarUnit.Weekday, fromDate: date)
-//                print(components.weekday)
-                
+//                print(dictonary)
                 
                 if let list = dictonary["list"] as? [Dictionary<String,AnyObject>] {
-                  
-                        var day = DayWeather(dayInfo: list[0]);
-                    
+                        self.dataSource = DayWeather.getDataSourceObjects(list, forHowManyDays: 5)
                 
                 }
             }
         }
     }
     
+    
+    func updateUi()
+    {
+        
+    }
         
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
