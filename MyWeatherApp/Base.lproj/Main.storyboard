@@ -22,6 +22,237 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="867" y="1011"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="z1G-qD-hqe">
+            <objects>
+                <viewController storyboardIdentifier="MWAPageContentViewController" id="3zI-cA-gjg" customClass="MWAPageContentViewController" customModule="MyWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S47-WJ-Rsp"/>
+                        <viewControllerLayoutGuide type="bottom" id="z25-qD-wqU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ylI-Pt-0xS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Nu-vLK">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="vaV-bB-Mxr">
+                                        <rect key="frame" x="216" y="212" width="128" height="128"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="9Ig-I4-6CQ"/>
+                                            <constraint firstAttribute="height" constant="128" id="mgO-ow-NXB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18.0 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOa-0R-Mb2">
+                                        <rect key="frame" x="408" y="428" width="127" height="35"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Men-EX-Jtv"/>
+                                            <constraint firstAttribute="width" constant="127" id="agh-Gd-mmz">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95 km/h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-uy-Gel">
+                                        <rect key="frame" x="408" y="487" width="127" height="35"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="JKj-e6-KFG"/>
+                                            <constraint firstAttribute="width" constant="127" id="Y3j-hV-bUL">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-In-1rn">
+                                        <rect key="frame" x="25" y="416" width="510" height="1"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Lg4-ZX-8YJ"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="gWz-PI-poS">
+                                        <rect key="frame" x="360" y="426" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="7Ab-kg-f3N">
+                                                <variation key="heightClass=compact" constant="30"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="40" id="h6t-1R-RAB">
+                                                <variation key="heightClass=compact" constant="30"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="Ugq-Er-qLO">
+                                        <rect key="frame" x="360" y="485" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="pDY-Ji-pIN">
+                                                <variation key="heightClass=compact" constant="30"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="40" id="uaf-wr-Wr3">
+                                                <variation key="heightClass=compact" constant="30"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEDNESDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOF-Q1-4zD">
+                                        <rect key="frame" x="105" y="69" width="350" height="103"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="103" id="XrA-h9-lX4"/>
+                                            <constraint firstAttribute="width" constant="350" id="hnh-iE-e9p"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="329" id="mth-Wj-uFb"/>
+                                            <constraint firstAttribute="height" constant="103" id="uV6-14-bPf">
+                                                <variation key="heightClass=compact" constant="64"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="51"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XrA-h9-lX4"/>
+                                                <exclude reference="mth-Wj-uFb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18.0 °" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-g4-k7H">
+                                        <rect key="frame" x="25" y="424" width="197" height="103"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="197" id="XI7-Lg-hDj">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="103" id="nbI-X3-ZB0">
+                                                <variation key="heightClass=compact" constant="64"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="57"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="55"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IOa-0R-Mb2" firstAttribute="leading" secondItem="gWz-PI-poS" secondAttribute="trailing" constant="8" id="7hR-wf-hZ6"/>
+                                    <constraint firstAttribute="trailing" secondItem="NpQ-uy-Gel" secondAttribute="trailing" constant="25" id="BjE-gJ-8Yy">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="NNq-g4-k7H" firstAttribute="leading" secondItem="14W-Nu-vLK" secondAttribute="leading" constant="25" id="H2a-35-jOH">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="NNq-g4-k7H" secondAttribute="bottom" constant="25" id="OGW-gU-3nG">
+                                        <variation key="heightClass=compact" constant="15"/>
+                                        <variation key="widthClass=compact" constant="7"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="NpQ-uy-Gel" secondAttribute="bottom" constant="30" id="RuJ-OX-Oh4">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
+                                    <constraint firstItem="vaV-bB-Mxr" firstAttribute="centerY" secondItem="14W-Nu-vLK" secondAttribute="centerY" id="Uc9-ft-y5J">
+                                        <variation key="heightClass=compact" constant="-8"/>
+                                    </constraint>
+                                    <constraint firstItem="NpQ-uy-Gel" firstAttribute="top" secondItem="IOa-0R-Mb2" secondAttribute="bottom" constant="24" id="VGM-WZ-58K">
+                                        <variation key="heightClass=compact" constant="2"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="IOa-0R-Mb2" firstAttribute="top" secondItem="O3x-In-1rn" secondAttribute="bottom" constant="15" id="ata-1o-wcf">
+                                        <variation key="heightClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="NpQ-uy-Gel" firstAttribute="leading" secondItem="Ugq-Er-qLO" secondAttribute="trailing" constant="8" id="bX1-bq-Jeb"/>
+                                    <constraint firstItem="vaV-bB-Mxr" firstAttribute="centerX" secondItem="14W-Nu-vLK" secondAttribute="centerX" id="frg-D8-rJf"/>
+                                    <constraint firstItem="Ugq-Er-qLO" firstAttribute="centerY" secondItem="NpQ-uy-Gel" secondAttribute="centerY" id="gcu-AL-Q7K"/>
+                                    <constraint firstItem="NNq-g4-k7H" firstAttribute="top" secondItem="O3x-In-1rn" secondAttribute="bottom" constant="7" id="hii-7R-fWW">
+                                        <variation key="heightClass=compact" constant="8"/>
+                                        <variation key="widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="O3x-In-1rn" firstAttribute="leading" secondItem="14W-Nu-vLK" secondAttribute="leading" constant="25" id="mqV-6x-RCL">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="tOF-Q1-4zD" firstAttribute="top" secondItem="14W-Nu-vLK" secondAttribute="top" constant="69" id="nPv-hM-Wk4">
+                                        <variation key="heightClass=compact" constant="6"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstItem="tOF-Q1-4zD" firstAttribute="centerX" secondItem="14W-Nu-vLK" secondAttribute="centerX" id="qys-vL-v22"/>
+                                    <constraint firstItem="gWz-PI-poS" firstAttribute="centerY" secondItem="IOa-0R-Mb2" secondAttribute="centerY" id="rSE-sn-Rk5"/>
+                                    <constraint firstAttribute="trailing" secondItem="O3x-In-1rn" secondAttribute="trailing" constant="25" id="sbk-GA-tnJ">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="9"/>
+                                    </constraint>
+                                    <constraint firstItem="IOa-0R-Mb2" firstAttribute="centerX" secondItem="NpQ-uy-Gel" secondAttribute="centerX" id="uMY-ia-C3c"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ata-1o-wcf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ata-1o-wcf"/>
+                                        <exclude reference="RuJ-OX-Oh4"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z25-qD-wqU" firstAttribute="top" secondItem="14W-Nu-vLK" secondAttribute="bottom" constant="20" id="BQD-mj-CSe">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="14W-Nu-vLK" firstAttribute="leading" secondItem="ylI-Pt-0xS" secondAttribute="leading" constant="20" id="QcL-DZ-1JB"/>
+                            <constraint firstAttribute="trailing" secondItem="14W-Nu-vLK" secondAttribute="trailing" constant="20" id="hOJ-0F-qvu"/>
+                            <constraint firstItem="14W-Nu-vLK" firstAttribute="top" secondItem="S47-WJ-Rsp" secondAttribute="bottom" constant="8" id="vwt-cf-Jgi">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dayLabel" destination="tOF-Q1-4zD" id="als-4j-HC2"/>
+                        <outlet property="degreesLbl" destination="NNq-g4-k7H" id="lQY-PY-rpn"/>
+                        <outlet property="humidityLbl" destination="IOa-0R-Mb2" id="6cV-Co-F9g"/>
+                        <outlet property="weatherConditionImg" destination="vaV-bB-Mxr" id="tnY-uU-D3S"/>
+                        <outlet property="windSpeedLbl" destination="NpQ-uy-Gel" id="BHu-77-2ag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Df7-Y8-Uw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-271.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="dvJ-bM-kHv">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="E7P-Q4-3L2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOC-bi-ddK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="385"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="01d" width="128" height="128"/>
+        <image name="humidity" width="161" height="269"/>
+        <image name="wind" width="546" height="485"/>
+    </resources>
 </document>
