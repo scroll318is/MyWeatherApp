@@ -31,6 +31,7 @@ class APICall{
                     let json = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
                     
                     if let dict = json as? Dictionary<String, AnyObject> {
+                        print(dict)
                         completion(dict, error: nil)
                     }
                 } catch {

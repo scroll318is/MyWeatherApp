@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor()
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    
         return true
     }
 

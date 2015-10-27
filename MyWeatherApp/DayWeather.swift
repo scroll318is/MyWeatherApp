@@ -9,14 +9,17 @@
 import Foundation
 
 class DayWeather {
-    private var _timestamp: NSTimeInterval?
-    private var _max_temp = ""
-    private var _min_temp = ""
-    private var _wind_speed = ""
-    private var _humidity = ""
+    private var _timestamp = NSTimeInterval.NaN
+    private var _max_temp = 0.0
+    private var _min_temp = 0.0
+    private var _wind_speed = 0.0
+    private var _humidity = 0.0
+    private var _current_temp = 0.0
+    private var _imageName = ""
     
     let KELVIN = 273.15
     
+    // object fabric
     static func getDataSourceObjects(arr:[Dictionary<String,AnyObject>], forHowManyDays: NSInteger) -> [DayWeather] {
         var days = [DayWeather]()
         
@@ -30,37 +33,60 @@ class DayWeather {
             
         }
         
-//        print(days)
         return days
     }
     
+    var date: String {
+       if _timestamp != NSTimeInterval.NaN {
+            let date = NSDate(timeIntervalSince1970: _timestamp)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .MediumStyle
+            dateFormatter.timeStyle = .NoStyle
+            let formattedString = dateFormatter.stringFromDate(date)
+            return CITY + " " + formattedString
+       }
+       return ""
+    }
+    
     var dayOfWeek: String {
-        if _timestamp != nil {
-            let date = NSDate(timeIntervalSince1970: _timestamp!)
+        if _timestamp != NSTimeInterval.NaN {
+            let date = NSDate(timeIntervalSince1970: _timestamp)
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components(NSCalendarUnit.Weekday, fromDate: date)
-            return weekDay(components.weekday)
+            return weekDay(components.weekday).uppercaseString
         }
         return ""
     }
     
+    var imageName: String {
+        return _imageName
+    }
+    
     var max_temp: String {
-        return _max_temp
+        return "\(roundDouble((_max_temp - KELVIN)))"
     }
     
     var min_temp: String {
-        return _min_temp
+        return "\(roundDouble((_min_temp - KELVIN)))"
+    }
+    
+    var average_temp: String {
+        return "\(roundDouble(((_max_temp + _min_temp) / 2) - KELVIN)) °"
     }
 
     var wind_speed: String {
-        return _wind_speed
+        return "\(roundDouble(_wind_speed))"
     }
 
     var humidity: String {
-        return _humidity
+        return "\(roundDouble(_humidity))"
     }
     
-    private init(dayInfo:Dictionary<String,AnyObject>) {
+    var current_temp: String {
+        return "\(roundDouble(_current_temp))"
+    }
+    
+    init(dayInfo:Dictionary<String,AnyObject>) {
         
         if let dt = dayInfo["dt"] as? NSTimeInterval {
             _timestamp = dt
@@ -69,28 +95,33 @@ class DayWeather {
         if let temp = dayInfo["temp"] as? Dictionary<String,AnyObject> {
             
             if let min = temp["min"] as? Double {
-                
-                _min_temp = "\(roundDouble(min - KELVIN))"
-                
+                _min_temp = min
             }
             if let max = temp["max"] as? Double {
-                _max_temp = "\(roundDouble(max - KELVIN))"
+                _max_temp = max
             }
+            
             
         }
         
         if let humidity = dayInfo["humidity"] as? Double {
-            _humidity = "\(roundDouble(humidity))"
+            _humidity = humidity
         }
         
         if let wind = dayInfo["speed"] as? Double {
-            _wind_speed = "\(roundDouble(wind))"
+            _wind_speed = wind
+        }
+        
+        if let weather = dayInfo["weather"] as? [Dictionary<String,AnyObject>] {
+            if let icon = weather[0]["icon"] as? String {
+                _imageName = icon
+            }
         }
         
         print(_humidity)
         print(_wind_speed)
-        print(_max_temp)
-        print(_min_temp)
+        print("MAX: " + max_temp)
+        print("MIN: " + min_temp)
         print(_timestamp)
         print(dayOfWeek)
     }
@@ -105,9 +136,6 @@ class DayWeather {
     {
         var day = ""
         switch (dayNumber){
-        case 0:
-            day = "Sunday"
-            break
         case 1:
             day = "Monday"
             break
@@ -125,6 +153,9 @@ class DayWeather {
             break
         case 6:
             day = "Saturday"
+            break
+        case 7:
+            day = "Sunday"
             break
         default:break
         }

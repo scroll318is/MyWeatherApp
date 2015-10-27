@@ -15,12 +15,26 @@ class MWAPageContentViewController: UIViewController {
     @IBOutlet weak var degreesLbl: UILabel!
     @IBOutlet weak var humidityLbl: UILabel!
     @IBOutlet weak var windSpeedLbl: UILabel!
+    @IBOutlet weak var weatherView: UIView!
+    @IBOutlet weak var dateLbl: UILabel!
     
+    var day: DayWeather!
     var pageIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dayLabel.text = day.dayOfWeek
+        degreesLbl.text = day.average_temp
+        humidityLbl.text = day.humidity
+        windSpeedLbl.text = day.wind_speed 
+        dateLbl.text = day.date
+        weatherConditionImg.image = UIImage(named: day.imageName)
+        view.backgroundColor = UIColor.clearColor()
+        
+        weatherView.layer.cornerRadius = 5.0
     }
+    
+    
 
 }
