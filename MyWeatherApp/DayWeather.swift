@@ -19,7 +19,7 @@ class DayWeather {
     
     let KELVIN = 273.15
     
-    // object fabric
+    // object factory
     static func getDataSourceObjects(arr:[Dictionary<String,AnyObject>], forHowManyDays: NSInteger) -> [DayWeather] {
         var days = [DayWeather]()
         
@@ -118,12 +118,12 @@ class DayWeather {
             }
         }
         
-        print(_humidity)
-        print(_wind_speed)
-        print("MAX: " + max_temp)
-        print("MIN: " + min_temp)
-        print(_timestamp)
-        print(dayOfWeek)
+//        print(_humidity)
+//        print(_wind_speed)
+//        print("MAX: " + max_temp)
+//        print("MIN: " + min_temp)
+//        print(_timestamp)
+//        print(dayOfWeek)
     }
     
     func roundDouble(doToRound: Double) -> Double {

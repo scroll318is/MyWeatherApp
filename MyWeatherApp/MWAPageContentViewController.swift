@@ -30,11 +30,8 @@ class MWAPageContentViewController: UIViewController {
         windSpeedLbl.text = day.wind_speed 
         dateLbl.text = day.date
         weatherConditionImg.image = UIImage(named: day.imageName)
-        view.backgroundColor = UIColor.clearColor()
         
-        weatherView.layer.cornerRadius = 5.0
+        view.backgroundColor = UIColor.clearColor()
     }
-    
-    
 
 }

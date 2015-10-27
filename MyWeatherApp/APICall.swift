@@ -9,8 +9,7 @@
 import Foundation
 
 class APICall{
-    var urlString = URL_16DAY_FORECAST + API_KEY
-//    static let sharedInstance = DownloadManager()
+    var urlString = URL_16DAY_FORECAST
     
     func downloadDataForCity(city: String, completion: DownloadComplete) {
         let session = NSURLSession.sharedSession()
