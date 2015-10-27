@@ -34,4 +34,14 @@ class MWAPageContentViewController: UIViewController {
         view.backgroundColor = UIColor.clearColor()
     }
 
+    @IBAction func onInfoTap(sender: UIButton)
+    {
+        let alertController = UIAlertController(title: "Average daily degrees in Celsius", message: "", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "dismiss", style: .Cancel, handler: { (action) -> Void in
+            alertController.dismissViewControllerAnimated(true, completion: {})
+        }))
+        presentViewController( alertController
+            , animated: true, completion: {})}
+    
+
 }

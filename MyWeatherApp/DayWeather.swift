@@ -71,7 +71,7 @@ class DayWeather {
     }
     
     var average_temp: String {
-        return "\(roundDouble(((_max_temp + _min_temp) / 2) - KELVIN)) °"
+        return "\(Int(((_max_temp + _min_temp) / 2) - KELVIN)) °"
     }
 
     var wind_speed: String {

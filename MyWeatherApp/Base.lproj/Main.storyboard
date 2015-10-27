@@ -138,25 +138,32 @@
                                             <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18.00 °" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-g4-k7H">
-                                        <rect key="frame" x="25" y="392" width="197" height="103"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-g4-k7H">
+                                        <rect key="frame" x="25" y="384" width="159" height="75"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="197" id="XI7-Lg-hDj">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                            <constraint firstAttribute="width" constant="159" id="XI7-Lg-hDj">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="118"/>
                                             </constraint>
-                                            <constraint firstAttribute="height" constant="103" id="nbI-X3-ZB0">
-                                                <variation key="heightClass=compact" constant="64"/>
-                                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                            <constraint firstAttribute="height" constant="75" id="nbI-X3-ZB0">
+                                                <variation key="heightClass=compact" constant="49"/>
+                                                <variation key="heightClass=regular-widthClass=compact" constant="64"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="57"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="44"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="47"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="55"/>
                                         </variation>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-wn-0uc">
+                                        <rect key="frame" x="25" y="471" width="22" height="22"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="onInfoTap:" destination="3zI-cA-gjg" eventType="touchUpInside" id="e50-2I-IQB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -169,9 +176,10 @@
                                     <constraint firstItem="NNq-g4-k7H" firstAttribute="leading" secondItem="14W-Nu-vLK" secondAttribute="leading" constant="25" id="H2a-35-jOH">
                                         <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                     </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="NNq-g4-k7H" secondAttribute="bottom" constant="25" id="OGW-gU-3nG">
-                                        <variation key="heightClass=compact" constant="10"/>
+                                    <constraint firstAttribute="bottom" secondItem="NNq-g4-k7H" secondAttribute="bottom" constant="61" id="OGW-gU-3nG">
+                                        <variation key="heightClass=compact" constant="33"/>
                                         <variation key="widthClass=compact" constant="7"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="23"/>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="NpQ-uy-Gel" secondAttribute="bottom" constant="30" id="RuJ-OX-Oh4">
                                         <variation key="heightClass=compact" constant="0.0"/>
@@ -184,14 +192,15 @@
                                         <variation key="heightClass=compact" constant="2"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                     </constraint>
+                                    <constraint firstItem="i8u-wn-0uc" firstAttribute="leading" secondItem="NNq-g4-k7H" secondAttribute="leading" id="WQT-42-VHn"/>
                                     <constraint firstItem="IOa-0R-Mb2" firstAttribute="top" secondItem="O3x-In-1rn" secondAttribute="bottom" constant="15" id="ata-1o-wcf">
                                         <variation key="heightClass=compact" constant="3"/>
                                     </constraint>
                                     <constraint firstItem="NpQ-uy-Gel" firstAttribute="leading" secondItem="Ugq-Er-qLO" secondAttribute="trailing" constant="8" id="bX1-bq-Jeb"/>
                                     <constraint firstItem="vaV-bB-Mxr" firstAttribute="centerX" secondItem="14W-Nu-vLK" secondAttribute="centerX" id="frg-D8-rJf"/>
                                     <constraint firstItem="Ugq-Er-qLO" firstAttribute="centerY" secondItem="NpQ-uy-Gel" secondAttribute="centerY" id="gcu-AL-Q7K"/>
-                                    <constraint firstItem="NNq-g4-k7H" firstAttribute="top" secondItem="O3x-In-1rn" secondAttribute="bottom" constant="7" id="hii-7R-fWW">
-                                        <variation key="heightClass=compact" constant="3"/>
+                                    <constraint firstItem="NNq-g4-k7H" firstAttribute="top" secondItem="O3x-In-1rn" secondAttribute="bottom" constant="-1" id="hii-7R-fWW">
+                                        <variation key="heightClass=compact" constant="-5"/>
                                         <variation key="widthClass=compact" constant="8"/>
                                     </constraint>
                                     <constraint firstItem="O3x-In-1rn" firstAttribute="leading" secondItem="14W-Nu-vLK" secondAttribute="leading" constant="25" id="mqV-6x-RCL">
@@ -200,6 +209,10 @@
                                     <constraint firstItem="tOF-Q1-4zD" firstAttribute="top" secondItem="14W-Nu-vLK" secondAttribute="top" constant="36" id="nPv-hM-Wk4">
                                         <variation key="heightClass=compact" constant="0.0"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstItem="i8u-wn-0uc" firstAttribute="top" secondItem="NNq-g4-k7H" secondAttribute="bottom" constant="12" id="njT-YR-T2K">
+                                        <variation key="heightClass=compact" constant="0.0"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="tOF-Q1-4zD" firstAttribute="centerX" secondItem="14W-Nu-vLK" secondAttribute="centerX" id="qys-vL-v22"/>
                                     <constraint firstItem="gWz-PI-poS" firstAttribute="centerY" secondItem="IOa-0R-Mb2" secondAttribute="centerY" id="rSE-sn-Rk5"/>
